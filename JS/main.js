@@ -1,5 +1,5 @@
 import { getProducts } from "./api.js";
-import { createCard, cardCarrito } from "../card.js";
+import { createCard, cardCarrito } from "./card.js";
 
 const obtnerProductos = async () => {
     let productos = await getProducts()
@@ -18,10 +18,6 @@ const handler = (obj) => {
 
     let car = document.querySelector("#carrito-id")
     precios.push(pPrice)
-    /*let precioFinal =  document.createElement("p")
-    precioFinal.classList.add("border","bg-white")*/
-    /*let precioTexto = document.createTextNode(`Total: ${getTotal(precios)}`)*/
-   // precioFinal.appendChild(precioTexto)
     car.append(cardCarrito(cardTitle, pPrice))
     document.getElementById("total").innerText = `Total = ${getTotal(precios)}`
 }
